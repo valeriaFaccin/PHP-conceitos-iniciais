@@ -20,3 +20,13 @@ var_dump(in_array("10", $notas, true)); //verifica se o valor passado no parâme
 
 echo "Quem tirou 10?"  . PHP_EOL;
 echo array_search(10, $notas) . PHP_EOL;//busca a chave do valor informado
+
+echo "" . PHP_EOL;
+
+echo "Alguèm tirou 10?"  . PHP_EOL;
+if(in_array(10, $notas)){
+    echo "Aluno que tirou 10:"  . PHP_EOL;
+    echo array_search(10, $notas) . PHP_EOL;
+} else {
+    echo "A nota 10 não foi alcançada por ninguém" . PHP_EOL;
+}

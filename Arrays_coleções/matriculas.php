@@ -1,13 +1,4 @@
 <?php
-/*  
-$alunos2023 = [
-    'Inês Zistente' => 10,
-    'Cintia Temas' => 8.5,
-    'Roberto' => 9,
-    'Carlos Eduardo' => 6,
-    'Pedro Progra I' => 7.13,
-    'Calastor Culo II' => 2
-];*/
 
 $alunos2023 = [
     'Inês Zistente',
