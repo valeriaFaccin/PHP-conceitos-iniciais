@@ -2,9 +2,23 @@
 
 class Conta
 {
-    public string $cpf;
-    public string $nomeTitular;
-    public float $saldo = 0;
+    private Titular $titular;
+    private CPF $cpf;
+    private float $saldo;
+    private static $numeroDeContas = 0;
+
+    public function __construct(Titular $titular)
+    {
+        $this->titular = $titular;
+        $this->saldo = 0;
+
+        self::$numeroDeContas++;
+    }
+
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
+    }
 
     public function sacar(float $valorSacar) : void
     {
@@ -24,7 +38,7 @@ class Conta
         $this->saldo += $valorDepositar;
     }
 
-    public function transferir(float $valorTranferido, $contaDeposito) : void
+    public function transferir(float $valorTranferido, Conta $contaDeposito) : void
     {
         if($valorTranferido > $this->saldo){
             echo "Saldo Indisponível". PHP_EOL;
@@ -39,23 +53,18 @@ class Conta
         return $this-> saldo;
     }
 
-    public function defineNomeTitular($nome) : void
+    public function recuperaNomeTitular(): string
     {
-        $this->nomeTitular = $nome;
+        return $this->titular->recuperarNome();
     }
 
-    public function recuperaNomeTitular() : string
+    public function recuperaCpfTitular(): string
     {
-        return $this->nomeTitular;
+        return $this->cpf->recuperarCpf();
     }
 
-    public function defineCpf($cpf) : void
+    public static function recuperarNumeroDeContas() :int
     {
-        $this->cpf = $cpf;
-    }
-
-    public function recuperaCpf() : string
-    {
-        return $this->cpf;
+        return self::$numeroDeContas;
     }
 }
