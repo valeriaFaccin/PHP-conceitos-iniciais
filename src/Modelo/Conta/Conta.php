@@ -1,10 +1,13 @@
 <?php
 
-class Conta
+/* namespace src\Modelo\Conta;
+
+use src\Modelo\Conta\Titular; */
+
+abstract class Conta
 {
     private Titular $titular;
-    private CPF $cpf;
-    private float $saldo;
+    protected float $saldo;
     private static $numeroDeContas = 0;
 
     public function __construct(Titular $titular)
@@ -22,11 +25,13 @@ class Conta
 
     public function sacar(float $valorSacar) : void
     {
-        if($valorSacar > $this->saldo){
+        $tarifaSaque = $valorSacar * $this->percentualTarifa();
+        $valorSaque = $valorSacar + $tarifaSaque;
+        if($valorSaque > $this->saldo){
             echo "Saldo Indisponível" . PHP_EOL;
             return;
         } 
-        $this->saldo -= $valorSacar;
+        $this->saldo -= $valorSaque;
     }
 
     public function depositar(float $valorDepositar) : void
@@ -36,16 +41,6 @@ class Conta
             return;
         } 
         $this->saldo += $valorDepositar;
-    }
-
-    public function transferir(float $valorTranferido, Conta $contaDeposito) : void
-    {
-        if($valorTranferido > $this->saldo){
-            echo "Saldo Indisponível". PHP_EOL;
-            return;
-        }    
-        $this-> sacar($valorTranferido);
-        $contaDeposito-> depositar($valorTranferido);
     }
 
     public function recuperarSaldo() : float
@@ -58,13 +53,20 @@ class Conta
         return $this->titular->recuperarNome();
     }
 
-    public function recuperaCpfTitular(): string
+    public function recuperarCpf()
     {
-        return $this->cpf->recuperarCpf();
+        return $this->titular->recuperarCpf();
+    }
+
+    public function recuperarNome()
+    {
+        return $this->titular->recuperarNome();
     }
 
     public static function recuperarNumeroDeContas() :int
     {
         return self::$numeroDeContas;
     }
+
+    abstract protected function percentualTarifa() : float;
 }
