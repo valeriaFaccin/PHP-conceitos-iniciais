@@ -1,6 +1,9 @@
 <?php
 
-/* namespace Modelo; */
+namespace src\Modelo\Funcionario;
+
+use src\Modelo\Pessoa;
+use src\Modelo\CPF;
 
 abstract class Funcionario extends Pessoa{
     private float $salario;

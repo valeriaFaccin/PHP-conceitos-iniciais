@@ -1,3 +1,0 @@
-PHP I/O: trabalhando com arquivos e streams
-Orientação a Objetos com PHP: Classes, métodos e atributos
-Orientação a Objetos com PHP: Classes, métodos e atributos

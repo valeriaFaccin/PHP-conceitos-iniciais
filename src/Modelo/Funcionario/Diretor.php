@@ -1,6 +1,11 @@
 <?php
 
-class Diretor extends Funcionario implements Autenticavel{
+namespace src\Modelo\Funcionario;
+
+use src\Modelo\Funcionario\Funcionario;
+use src\Modelo\Autenticavel;
+
+class Diretor extends Funcionario{
     public function calculaBonificacao() : float
     {
         return $this->recuperarSalario() * 2;

@@ -1,5 +1,9 @@
 <?php
 
+namespace src\Modelo\Funcionario;
+
+use src\Modelo\Funcionario\Funcionario;
+
 class Desenvolvedor extends Funcionario{
     public function subirDeNivel()
     {
