@@ -1,5 +1,9 @@
 <?php
 
+namespace src\Modelo\Service;
+
+use src\Modelo\Autenticavel;
+
 class Autenticador
 {
     public function login(Autenticavel $autenticavel, string $senha): void

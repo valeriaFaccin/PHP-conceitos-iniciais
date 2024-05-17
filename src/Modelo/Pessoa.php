@@ -1,6 +1,8 @@
 <?php
 
-/* namespace Modelo; */
+namespace src\Modelo;
+
+use src\Modelo\CPF;
 
 abstract class Pessoa {
     protected string $nome;
@@ -23,7 +25,7 @@ abstract class Pessoa {
         return $this->cpf->recuperarCpf();
     }
 
-    protected function validarNomeTitular(string $nomeTitular) : void
+    final protected function validarNomeTitular(string $nomeTitular) : void
     {
         if(strlen($nomeTitular) < 2){
             echo "Nome precisa ter pelo menos 2 caracteres" . PHP_EOL;

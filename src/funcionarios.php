@@ -1,20 +1,12 @@
 <?php
 
-require '/home/ixcsoft/cod_php/src/Modelo/Conta/Conta.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Conta/ContaPoupanca.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Conta/ContaCorrente.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Pessoa.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Endereco.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Conta/Titular.php';
-require '/home/ixcsoft/cod_php/src/Modelo/CPF.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Funcionario/Funcionario.php';
-require '/home/ixcsoft/cod_php/src/Service/ControladorDeBonificacao.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Funcionario/Diretor.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Funcionario/Gerente.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Funcionario/Desenvolvedor.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Funcionario/Escritor.php';
-require '/home/ixcsoft/cod_php/src/Service/Autenticador.php';
-require '/home/ixcsoft/cod_php/src/Modelo/Autenticavel.php';
+use src\Modelo\CPF;
+use src\Modelo\Funcionario\Desenvolvedor;
+use src\Modelo\Funcionario\Diretor;
+use src\Modelo\Funcionario\Gerente;
+use src\Modelo\Funcionario\Escritor;
+//use src\Modelo\Service\Autenticador;
+use src\Modelo\Service\ControladorDeBonificacao;
 
 
 $primeiraFuncionaria = new Diretor(
@@ -58,5 +50,5 @@ $terceiroFuncionario->subirDeNivel();
 
 echo 'Total Bonificações: ' . $controlador->recuperarTotalBonificacao() . PHP_EOL;
 
-$autenticador = new Autenticador();
-$autenticador->login($quintaFuncionaria, '34343');
+//$autenticador = new Autenticador();
+//$autenticador->login($quintaFuncionaria, '34343');

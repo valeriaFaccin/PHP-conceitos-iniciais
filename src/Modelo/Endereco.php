@@ -1,8 +1,11 @@
 <?php
 
-/* namespace Modelo; */
+namespace src\Modelo;
 
 class Endereco {
+
+    use AcessaAtributo;
+
     private string $cidade;
     private string $bairro;
     private string $rua;
@@ -33,5 +36,10 @@ class Endereco {
     public function recuperaNumero() : string 
     {
         return $this->numero;
+    }
+
+    public function __toString() : string
+    {
+        return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
     }
 }

@@ -1,5 +1,9 @@
 <?php
 
+namespace src\Modelo\Service;
+
+use src\Modelo\Funcionario\Funcionario;
+
 class ControladorDeBonificacao{
     private float $totalBonificacao = 0;
 
