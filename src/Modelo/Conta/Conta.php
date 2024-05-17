@@ -1,8 +1,8 @@
 <?php
 
-/* namespace src\Modelo\Conta;
+namespace src\Modelo\Conta;
 
-use src\Modelo\Conta\Titular; */
+use src\Modelo\Conta\Titular;
 
 abstract class Conta
 {

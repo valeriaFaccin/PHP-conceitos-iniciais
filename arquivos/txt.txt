@@ -1,0 +1,26 @@
+
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/autoload.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Conta/Conta.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Conta/ContaCorrente.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Conta/ContaPoupanca.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Pessoa.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Conta/Titular.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/CPF.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Endereco.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Autenticavel.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/AcessaAtributo.php';
+
+
+
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/autoload.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Pessoa.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Conta/Titular.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/CPF.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Endereco.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Funcionario/Funcionario.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Funcionario/Desenvolvedor.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Funcionario/Diretor.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Funcionario/Escritor.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Funcionario/Gerente.php';
+require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Service/ControladorDeBonificacao.php';
+//require_once '/home/ixcsoft/PHP-conceitos-iniciais/src/Modelo/Autenticavel.php';

@@ -1,0 +1,43 @@
+Manipulação de arquivos com PHP
+
+Métodos de leitura de arquivos:
+
+=>leitura linha por linha:
+$arquivo_txt = fopen('txt.txt', 'r');   //abre o arquivo
+while(!feof($arquivo_txt)){             //enquanto o arquivo não chegar ao fim
+    $getArquivo = fgets($arquivo_txt);  //lê cada linha do arquivo a cada iteração do loop
+
+    echo $getArquivo;                   //print de cada linha
+}
+fclose($arquivo_txt);                   //fecha o arquivo
+
+=>leitura completa pelo tamanho do arquivo:
+$arquivo_txt = fopen('txt.txt', 'r');
+$tamanhoArquivo = filesize('txt.txt'); //calcula o tamanho do arquivo em bytes
+$getArquivo = fread($arquivo_txt, $tamanhoArquivo);  //lê um arquivo por número de bytes passados (ex: se $tam = 10, lê os 10 primeiros caracteres)
+echo $getArquivo;
+fclose($arquivo_txt);
+
+=>leitura direta - basicamente o processo da leitura completa mas com uma função pronta do PHP:
+$text = file_get_contents('txt.txt');    //lê um arquivo por completo
+echo $text;
+
+=>leitura por linha transformando o arquivo em um array:
+$arquivo = file('txt.txt'); //cada índice do array conterá uma linha do arquivo em string
+var_dump( $arquivo );
+
+=> escrita de arquivos:
+$arquivo = fopen("cursos.txt","w");
+$cursos = "PHP I/O: trabalhando com arquivos e streams";
+fwrite($arquivo, $cursos, 50);
+fclose($arquivo);
+
+=> escrita de arquivos ao final do arquivo
+$arquivo = fopen("cursos.txt","a");
+$cursos = "\nOrientação a Objetos com PHP: Classes, métodos e atributos";
+fwrite($arquivo, $cursos); //sem delimitar número de bytes escritos
+fclose($arquivo);
+
+=>escrita direta de arquivos
+$cursos = "\nOrientação a Objetos com PHP: Classes, métodos e atributos";
+file_put_contents('cursos.txt', $cursos, FILE_APPEND); //adiciona ao final do arquivo
