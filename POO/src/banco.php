@@ -1,13 +1,13 @@
 <?php
 
-require_once 'autoload.php';
-
 use POO\src\Modelo\Conta\Conta;
 use POO\src\Modelo\Conta\ContaCorrente;
 use POO\src\Modelo\Conta\ContaPoupanca;
 use POO\src\Modelo\Conta\Titular;
 use POO\src\Modelo\CPF;
 use POO\src\Modelo\Endereco;
+
+require_once 'autoload.php';
 
 if(trait_exists('AcessaAtributo')){
     echo 'Trait exists' . PHP_EOL;
@@ -34,11 +34,11 @@ echo $primeiroEndereco . PHP_EOL;
 echo $primeiroEndereco->cidade . PHP_EOL;
 
 
-$enderecoGeral = new Endereco ('Shattered Plains', "Kholin's war camp", 'main street', '100B');
+$enderecoGeral = new Endereco ('Cidade', "Bairro Epafi", 'Rua Florianópolis', '100B');
 
 $segundaConta = new ContaPoupanca(
     new Titular(new CPF('156.987.564-40'), 
-    'Kaladin Stormblessed', 
+    'Kal Adin', 
     $enderecoGeral)
 );
 $segundaConta-> depositar(500);
@@ -47,21 +47,21 @@ echo 'Saldo segunda conta: ' . $segundaConta-> recuperarSaldo() . PHP_EOL;
 
 $terceiraConta = new ContaPoupanca(
     new Titular(new CPF('643.864.934-83'), 
-    'Shallan Davar', 
+    'Shall Davar', 
     $enderecoGeral)
 );
 $terceiraConta-> depositar(550000);
 
 $quartaConta = new ContaCorrente(
     new Titular(new CPF('848.923.374-98'), 
-    'Adolin Kholin', 
+    'Adonio Colins', 
     $enderecoGeral)
 );
 $quartaConta-> depositar(10000000);
 
 $quintaConta = new ContaPoupanca(
     new Titular(new CPF('000.000.000-00'), 
-    "Talenel d'Elrim", 
+    "Taln D'Elrim", 
     $enderecoGeral)
 );
 unset($quintaConta);

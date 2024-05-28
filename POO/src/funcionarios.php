@@ -8,6 +8,7 @@ use POO\src\Modelo\Funcionario\Escritor;
 use POO\src\Modelo\Service\Autenticador;
 use POO\src\Modelo\Service\ControladorDeBonificacao;
 
+require_once 'autoload.php';
 
 $primeiraFuncionaria = new Diretor(
     new CPF('345.234.687-99'), 
