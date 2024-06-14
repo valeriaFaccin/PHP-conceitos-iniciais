@@ -1,16 +1,15 @@
 <?php
 
-namespace POO\src\Modelo\Funcionario;
+namespace Alura\Banco\Modelo\Funcionario;
 
-use POO\src\Modelo\Funcionario\Funcionario;
-
-class Desenvolvedor extends Funcionario{
+class Desenvolvedor extends Funcionario
+{
     public function subirDeNivel()
     {
-        return $this->aumentarSalario($this->recuperarSalario() * 0.75);
+        $this->recebeAumento($this->recuperaSalario() * 0.75);
     }
 
-    public function calculaBonificacao() : float
+    public function calculaBonificacao(): float
     {
         return 500.0;
     }

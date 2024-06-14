@@ -1,18 +1,18 @@
 <?php
 
-namespace POO\src\Modelo\Funcionario;
+namespace Alura\Banco\Modelo\Funcionario;
 
-use POO\src\Modelo\Funcionario\Funcionario;
-use POO\src\Modelo\Autenticavel;
+use Alura\Banco\Modelo\Autenticavel;
 
-class Diretor extends Funcionario{
-    public function calculaBonificacao() : float
+class Diretor extends Funcionario implements Autenticavel
+{
+    public function calculaBonificacao(): float
     {
-        return $this->recuperarSalario() * 2;
+        return $this->recuperaSalario() * 2;
     }
 
-    public function autenticarSenha(string $senha) : bool
+    public function podeAutenticar(string $senha): bool
     {
-        return $senha === '40028922';
+        return $senha === '1234';
     }
 }

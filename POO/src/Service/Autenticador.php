@@ -1,17 +1,17 @@
 <?php
 
-namespace POO\src\Modelo\Service;
+namespace Alura\Banco\Service;
 
-use POO\src\Modelo\Autenticavel;
+use Alura\Banco\Modelo\Autenticavel;
 
 class Autenticador
 {
     public function login(Autenticavel $autenticavel, string $senha): void
     {
-        if ($autenticavel->autenticarSenha($senha)) {
-            echo "Usuário logado no sistema" . PHP_EOL;
+        if ($autenticavel->podeAutenticar($senha)) {
+            echo "Ok. Usuário logado no sistema";
         } else {
-         echo "Senha incorreta." . PHP_EOL;
+            echo "Ops. Senha incorreta.";
         }
     }
 }

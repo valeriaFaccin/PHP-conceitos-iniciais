@@ -1,7 +1,8 @@
 <?php
 
-namespace POO\Src\Modelo;
+namespace Alura\Banco\Modelo;
 
-interface Autenticavel{
-    public function autenticarSenha(string $senha): bool;
+interface Autenticavel
+{
+    public function podeAutenticar(string $senha): bool;
 }

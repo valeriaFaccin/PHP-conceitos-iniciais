@@ -1,35 +1,36 @@
 <?php
 
-namespace POO\src\Modelo;
+namespace Alura\Banco\Modelo;
 
-use POO\src\Modelo\CPF;
-use POO\src\Modelo\nomeInvalidoException;
+abstract class Pessoa
+{
+    use AcessoPropriedades;
 
-abstract class Pessoa {
-    protected string $nome;
-    private CPF $cpf;
+    protected $nome;
+    private $cpf;
 
     public function __construct(string $nome, CPF $cpf)
     {
-        $this->validarNomeTitular($nome);
+        $this->validaNome($nome);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
 
-    public function recuperarNome() : string
+    public function recuperaNome(): string
     {
         return $this->nome;
     }
 
-    public function recuperarCpf() : string
+    public function recuperaCpf(): string
     {
-        return $this->cpf->recuperarCpf();
+        return $this->cpf->recuperaNumero();
     }
 
-    final protected function validarNomeTitular(string $nomeTitular) : void
+    final protected function validaNome(string $nomeTitular)
     {
-        if(strlen($nomeTitular) < 2){
-            throw new nomeInvalidoException($nomeTitular);
+        if (strlen($nomeTitular) < 5) {
+            echo "Nome precisa ter pelo menos 5 caracteres";
+            exit();
         }
     }
 }

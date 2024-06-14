@@ -1,23 +1,22 @@
 <?php
 
-namespace POO\src\Modelo\Conta;
+namespace Alura\Banco\Modelo\Conta;
 
-use POO\src\Modelo\Conta\Conta;
-
-class ContaCorrente extends Conta{
-
-    protected function percentualTarifa() : float
+class ContaCorrente extends Conta
+{
+    protected function percentualTarifa(): float
     {
         return 0.05;
     }
 
-    public function transferir(float $valorTranferido, Conta $contaDeposito) : void
+    public function transfere(float $valorATransferir, Conta $contaDestino): void
     {
-        if($valorTranferido > $this->saldo){
-            echo "Saldo Indisponível". PHP_EOL;
+        if ($valorATransferir > $this->saldo) {
+            echo "Saldo indisponível";
             return;
-        }    
-        $this-> sacar($valorTranferido);
-        $contaDeposito-> depositar($valorTranferido);
+        }
+
+        $this->sacar($valorATransferir);
+        $contaDestino->depositar($valorATransferir);
     }
 }

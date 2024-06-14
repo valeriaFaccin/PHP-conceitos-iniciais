@@ -1,14 +1,15 @@
 <?php
 
-namespace POO\src\Modelo\Conta;
+namespace Alura\Banco\Modelo\Conta;
 
-use POO\src\Modelo\CPF;
-use POO\src\Modelo\Pessoa;
-use POO\src\Modelo\Endereco;
-use POO\src\Modelo\Autenticavel;
+use Alura\Banco\Modelo\Autenticavel;
+use Alura\Banco\Modelo\Pessoa;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Endereco;
 
-class Titular extends Pessoa {
-    private Endereco $endereco;
+class Titular extends Pessoa implements Autenticavel
+{
+    private $endereco;
 
     public function __construct(CPF $cpf, string $nome, Endereco $endereco)
     {
@@ -16,13 +17,13 @@ class Titular extends Pessoa {
         $this->endereco = $endereco;
     }
 
-    public function recuperarEndereco() : Endereco
+    public function recuperaEndereco(): Endereco
     {
         return $this->endereco;
     }
 
-    /* public function autenticarSenha(string $senha) : bool
+    public function podeAutenticar(string $senha): bool
     {
-        return $senha === '101010';
-    } */
+        return $senha === 'abcd';
+    }
 }

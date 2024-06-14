@@ -1,12 +1,11 @@
 <?php
 
-namespace POO\src\Modelo\Funcionario;
+namespace Alura\Banco\Modelo\Funcionario;
 
-use POO\src\Modelo\Funcionario\Funcionario;
-
-class Escritor extends Funcionario{
-    public function calculaBonificacao() : float
+class Escritor extends Funcionario
+{
+    public function calculaBonificacao(): float
     {
-        return 700.0;
+        return 600;
     }
 }

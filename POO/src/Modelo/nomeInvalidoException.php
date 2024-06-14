@@ -1,6 +1,6 @@
 <?php
 
-namespace POO\Src\Modelo;
+namespace Alura\Banco\Modelo;
 
 use Throwable;
 

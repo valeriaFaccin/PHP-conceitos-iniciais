@@ -1,15 +1,12 @@
 <?php
 
-namespace POO\src\Modelo\Conta;
-
-use POO\src\Modelo\Conta\Titular;
-use POO\src\Modelo\Conta\saldoInsuficienteException;
+namespace Alura\Banco\Modelo\Conta;
 
 abstract class Conta
 {
     private Titular $titular;
     protected float $saldo;
-    private static $numeroDeContas = 0;
+    private static int $numeroDeContas = 0;
 
     public function __construct(Titular $titular)
     {
@@ -24,48 +21,45 @@ abstract class Conta
         self::$numeroDeContas--;
     }
 
-    public function sacar(float $valorSacar) : void
+    public function sacar(float $valorASacar): void
     {
-        $tarifaSaque = $valorSacar * $this->percentualTarifa();
-        $valorSaque = $valorSacar + $tarifaSaque;
-        if($valorSaque > $this->saldo){
-            throw new saldoInsuficienteException($valorSaque, $this->saldo);
-        } 
+        $tarifaSaque = $valorASacar * $this->percentualTarifa();
+        $valorSaque = $valorASacar + $tarifaSaque;
+        if ($valorSaque > $this->saldo) {
+            throw new SaldoInsuficienteException($valorSaque, $this->saldo);
+        }
+
         $this->saldo -= $valorSaque;
     }
 
-    public function depositar(float $valorDepositar) : void
+    public function depositar(float $valorADepositar): void
     {
-        if($valorDepositar < 0){
+        if ($valorADepositar < 0) {
             throw new \InvalidArgumentException();
-        } 
-        $this->saldo += $valorDepositar;
+        }
+
+        $this->saldo += $valorADepositar;
     }
 
-    public function recuperarSaldo() : float
+    public function recuperaSaldo(): float
     {
-        return $this-> saldo;
+        return $this->saldo;
     }
 
-    public function recuperaNomeTitular(): string
+    public function recuperaNome(): string
     {
-        return $this->titular->recuperarNome();
+        return $this->titular->recuperaNome();
     }
 
-    public function recuperarCpf()
+    public function recuperaCpf(): string
     {
-        return $this->titular->recuperarCpf();
+        return $this->titular->recuperaCpf();
     }
 
-    public function recuperarNome()
-    {
-        return $this->titular->recuperarNome();
-    }
-
-    public static function recuperarNumeroDeContas() :int
+    public static function recuperaNumeroDeContas(): int
     {
         return self::$numeroDeContas;
     }
 
-    abstract protected function percentualTarifa() : float;
+    abstract protected function percentualTarifa(): float;
 }
