@@ -4,25 +4,24 @@ namespace Alura\Banco\Modelo;
 
 final class CPF
 {
-    private $numero;
+    private $cpf;
 
-    public function __construct(string $numero)
+    public function __construct(string $cpf)
     {
-        $numero = filter_var($numero, FILTER_VALIDATE_REGEXP, [
+        $cpf = filter_var($cpf, FILTER_VALIDATE_REGEXP, [
             'options' => [
                 'regexp' => '/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$/'
             ]
         ]);
 
-        if ($numero === false) {
-            echo "Cpf inválido";
-            exit();
-        }
-        $this->numero = $numero;
+        if ($cpf === false) {
+            throw new \InvalidArgumentException('CPF inválido');
+         }
+        $this->cpf = $cpf;
     }
 
-    public function recuperaNumero(): string
+    public function recuperarCpf(): string
     {
-        return $this->numero;
+        return $this->cpf;
     }
 }

@@ -6,7 +6,7 @@ class SaldoInsuficienteException extends \DomainException
 {
     public function __construct(float $valorSaque, float $saldoAtual)
     {
-        $mensagem = "Você tentou sacar $valorSaque, mas tem apenas $saldoAtual em conta.";
+        $mensagem = "Valor do seu saque: $valorSaque é inferior ao seu saldo atual: $saldoAtual" . PHP_EOL;
         parent::__construct($mensagem);
     }
 }

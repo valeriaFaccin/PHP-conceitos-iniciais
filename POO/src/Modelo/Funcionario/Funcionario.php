@@ -15,13 +15,18 @@ abstract class Funcionario extends Pessoa
         $this->salario = $salario;
     }
 
-    public function alteraNome(string $nome): void
+    public function alterarNome(string $nome): void
     {
-        $this->validaNome($nome);
+        $this->validarNomeTitular($nome);
         $this->nome = $nome;
     }
 
-    public function recebeAumento(float $valorAumento): void
+    public function recuperarSalario(): float
+    {
+        return $this->salario;
+    }
+
+    public function aumentarSalario(float $valorAumento): void
     {
         if ($valorAumento < 0) {
             echo "Aumento deve ser positivo";
@@ -29,11 +34,6 @@ abstract class Funcionario extends Pessoa
         }
 
         $this->salario += $valorAumento;
-    }
-
-    public function recuperaSalario(): float
-    {
-        return $this->salario;
     }
 
     abstract public function calculaBonificacao(): float;

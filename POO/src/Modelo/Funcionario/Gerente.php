@@ -8,11 +8,11 @@ class Gerente extends Funcionario implements Autenticavel
 {
     public function calculaBonificacao(): float
     {
-        return $this->recuperaSalario();
+        return $this->recuperarSalario();
     }
 
-    public function podeAutenticar(string $senha): bool
+    public function autenticarSenha(string $senha): bool
     {
-        return $senha === '4321';
+        return $senha === '1234567';
     }
 }

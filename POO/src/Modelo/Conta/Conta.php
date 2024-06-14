@@ -41,22 +41,22 @@ abstract class Conta
         $this->saldo += $valorADepositar;
     }
 
-    public function recuperaSaldo(): float
+    public function recuperarSaldo(): float
     {
         return $this->saldo;
     }
 
-    public function recuperaNome(): string
+    public function recuperarNome(): string
     {
-        return $this->titular->recuperaNome();
+        return $this->titular->recuperarNome();
     }
 
-    public function recuperaCpf(): string
+    public function recuperarCpf(): string
     {
-        return $this->titular->recuperaCpf();
+        return $this->titular->recuperarCpf();
     }
 
-    public static function recuperaNumeroDeContas(): int
+    public static function recuperarNumeroDeContas(): int
     {
         return self::$numeroDeContas;
     }

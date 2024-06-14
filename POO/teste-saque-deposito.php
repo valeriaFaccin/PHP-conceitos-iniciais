@@ -30,6 +30,6 @@ try{
     echo $e->getMessage() . PHP_EOL;
 }
 
-$conta->recuperaSaldo();
+$conta->recuperarSaldo();
 var_dump($conta);
 

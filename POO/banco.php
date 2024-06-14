@@ -27,9 +27,9 @@ $primeiraConta->sacar(300);
 /* var_dump($primeiraConta); */
 
 echo "Dados primeira conta: " . PHP_EOL;
-echo $primeiraConta-> recuperaSaldo() . PHP_EOL;
-echo $primeiraConta-> recuperaCpf() . PHP_EOL;
-echo $primeiraConta-> recuperaNome() . PHP_EOL;
+echo $primeiraConta-> recuperarSaldo() . PHP_EOL;
+echo $primeiraConta-> recuperarCpf() . PHP_EOL;
+echo $primeiraConta-> recuperarNome() . PHP_EOL;
 echo $primeiroEndereco . PHP_EOL;
 echo $primeiroEndereco->cidade . PHP_EOL;
 
@@ -43,7 +43,7 @@ $segundaConta = new ContaPoupanca(
 );
 $segundaConta-> depositar(500);
 $segundaConta->sacar(100);
-echo 'Saldo segunda conta: ' . $segundaConta-> recuperaSaldo() . PHP_EOL;
+echo 'Saldo segunda conta: ' . $segundaConta-> recuperarSaldo() . PHP_EOL;
 
 $terceiraConta = new ContaPoupanca(
     new Titular(new CPF('643.864.934-83'), 
@@ -66,5 +66,5 @@ $quintaConta = new ContaPoupanca(
 );
 unset($quintaConta);
 
-echo 'Total contas: ' . Conta::recuperaNumeroDeContas() . PHP_EOL;
+echo 'Total contas: ' . Conta::recuperarNumeroDeContas() . PHP_EOL;
 

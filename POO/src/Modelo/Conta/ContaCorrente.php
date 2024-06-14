@@ -9,14 +9,14 @@ class ContaCorrente extends Conta
         return 0.05;
     }
 
-    public function transfere(float $valorATransferir, Conta $contaDestino): void
+    public function transferir(float $valorTranferido, Conta $contaDeposito): void
     {
-        if ($valorATransferir > $this->saldo) {
-            echo "Saldo indisponível";
+        if ($valorTranferido > $this->saldo) {
+            echo "Saldo Indisponível". PHP_EOL;
             return;
         }
 
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
+        $this->sacar($valorTranferido);
+        $contaDeposito->depositar($valorTranferido);
     }
 }

@@ -17,12 +17,12 @@ class Titular extends Pessoa implements Autenticavel
         $this->endereco = $endereco;
     }
 
-    public function recuperaEndereco(): Endereco
+    public function recuperarEndereco(): Endereco
     {
         return $this->endereco;
     }
 
-    public function podeAutenticar(string $senha): bool
+    public function autenticarSenha(string $senha): bool
     {
         return $senha === 'abcd';
     }

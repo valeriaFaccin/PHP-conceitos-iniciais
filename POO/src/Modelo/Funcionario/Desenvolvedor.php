@@ -6,7 +6,7 @@ class Desenvolvedor extends Funcionario
 {
     public function subirDeNivel()
     {
-        $this->recebeAumento($this->recuperaSalario() * 0.75);
+        $this->aumentarSalario($this->recuperarSalario() * 0.75);
     }
 
     public function calculaBonificacao(): float

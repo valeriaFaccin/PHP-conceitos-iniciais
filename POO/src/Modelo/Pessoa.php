@@ -11,26 +11,25 @@ abstract class Pessoa
 
     public function __construct(string $nome, CPF $cpf)
     {
-        $this->validaNome($nome);
+        $this->validarNomeTitular($nome);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
 
-    public function recuperaNome(): string
+    public function recuperarNome(): string
     {
         return $this->nome;
     }
 
-    public function recuperaCpf(): string
+    public function recuperarCpf(): string
     {
-        return $this->cpf->recuperaNumero();
+        return $this->cpf->recuperarCpf();
     }
 
-    final protected function validaNome(string $nomeTitular)
+    final protected function validarNomeTitular(string $nomeTitular) : void
     {
-        if (strlen($nomeTitular) < 5) {
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
+        if(strlen($nomeTitular) < 2){
+            throw new nomeInvalidoException($nomeTitular);
         }
     }
 }

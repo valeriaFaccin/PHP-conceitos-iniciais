@@ -8,10 +8,10 @@ class Autenticador
 {
     public function login(Autenticavel $autenticavel, string $senha): void
     {
-        if ($autenticavel->podeAutenticar($senha)) {
-            echo "Ok. Usuário logado no sistema";
+        if ($autenticavel->autenticarSenha($senha)) {
+            echo "Usuário logado no sistema" . PHP_EOL;
         } else {
-            echo "Ops. Senha incorreta.";
+            echo "Senha incorreta." . PHP_EOL;
         }
     }
 }
