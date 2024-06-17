@@ -1,10 +1,16 @@
 <?php
 
 namespace Alura\DesignPattern;
+use Alura\DesignPattern\AcoesGerarPedido\{AcaoPosPedido, CriarPedidoNoBanco, EnviarPedidoPorEmail, GerarLogPedido};
 
 class GerarPedidoHandler
 {
+    private array $acoesPosPedido = [];
     public function __construct(){}
+
+    public function adicionaAcoesPosPedido(AcaoPosPedido $acao){
+        $this->acoesPosPedido[] = $acao; 
+    }
 
     public function execute(GerarPedido $gerarPedido){
         $orcamento = new Orcamento();
@@ -16,7 +22,8 @@ class GerarPedidoHandler
         $pedido->nomeCliente = $gerarPedido->getNomeCliente();
         $pedido->orcamento = $orcamento;
 
-        echo "Cria pedido no banco de dados " . PHP_EOL;
-        echo "Envia e-mail para cliente " . PHP_EOL;
+        foreach($this->acoesPosPedido as $acao){
+            $acao->executarAcao($pedido);
+        }
     }
 }
