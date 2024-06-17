@@ -4,7 +4,8 @@ namespace alura\DesignPattern\EstadosOrcamento;
 
 use Alura\DesignPattern\Orcamento;
 
-abstract class EstadoOrcamento {
+abstract class EstadoOrcamento 
+{
     /**
      * @throws \DomainException
      */

@@ -3,7 +3,8 @@
 namespace Alura\DesignPattern;
 use Alura\DesignPattern\EstadosOrcamento\{EmAprovacao, EstadoOrcamento};
 
-class Orcamento {
+class Orcamento 
+{
     public int $qtdItens;
     public float $valor;
     public EstadoOrcamento $estadoAtual;

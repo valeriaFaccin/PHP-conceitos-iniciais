@@ -3,8 +3,8 @@
 namespace Alura\DesignPattern\Impostos;
 use Alura\DesignPattern\Orcamento;
 
-class Icpp extends ImpostoAlicotas {
-
+class Icpp extends ImpostoAlicotas 
+{
     protected function taxaMaxima(Orcamento $orcamento) : bool
     {
         return $orcamento->valor > 500;

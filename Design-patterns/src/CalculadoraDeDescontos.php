@@ -3,7 +3,8 @@
 namespace Alura\DesignPattern;
 use Alura\DesignPattern\Descontos\{DescontoDeItens, DescontoDePreco, SemDesconto};
 
-class CalculadoraDeDescontos{
+class CalculadoraDeDescontos
+{
     public function calcularDescontos(Orcamento $orcamento) : float 
     {
         $cadeiaDescontos = new DescontoDeItens(

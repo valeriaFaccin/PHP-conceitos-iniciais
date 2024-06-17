@@ -8,11 +8,13 @@ class GerarPedidoHandler
     private array $acoesPosPedido = [];
     public function __construct(){}
 
-    public function adicionaAcoesPosPedido(AcaoPosPedido $acao){
+    public function adicionaAcoesPosPedido(AcaoPosPedido $acao)
+    {
         $this->acoesPosPedido[] = $acao; 
     }
 
-    public function execute(GerarPedido $gerarPedido){
+    public function execute(GerarPedido $gerarPedido)
+    {
         $orcamento = new Orcamento();
         $orcamento->qtdItens = $gerarPedido->getNumeroItens();
         $orcamento->valor = $gerarPedido->getValorOrcamento();
