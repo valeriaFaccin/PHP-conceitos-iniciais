@@ -11,7 +11,7 @@ $calculadora = new CalculadoraDeImpostos();
 $orcamento = new Orcamento();
 $orcamento->valor = 100;
 
-echo $calculadora->calcular($orcamento, new Iss()) . PHP_EOL;
+echo $calculadora->calcular($orcamento, new Iss(new Icms())) . PHP_EOL;
 
 //calcula por Desconto
 $calculadoraDescontos = new CalculadoraDeDescontos();
