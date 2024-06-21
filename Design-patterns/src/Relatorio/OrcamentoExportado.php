@@ -16,8 +16,9 @@ class OrcamentoExportado implements ConteudoExportado
     public function conteudo(): array
     {
         return [
-            'valor' => $this->orcamento->valor,
-            'quantidade_itens' => $this->orcamento->qtdItens
+            //concertar orcamento->valor e orcamento->qtdItens
+            /* 'valor' => $this->orcamento->valor,
+            'quantidade_itens' => $this->orcamento->qtdItens */
         ];
     }
 }

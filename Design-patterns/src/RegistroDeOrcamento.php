@@ -17,10 +17,10 @@ class RegistroDeOrcamento
         if(!$orcamento->estadoAtual instanceof Finalizado){
             throw new \DomainException('Apenas Orçamentos Finalizados podem ser registrados');
         }
-
-        $this->http->post('http://api.registrar.orcamento', [
+        //concertar orcamento->valor
+        /* $this->http->post('http://api.registrar.orcamento', [
             "valor" => $orcamento->valor,
             "quantidade" => $orcamento->qtdItens
-        ]);
+        ]); */
     }
 }

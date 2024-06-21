@@ -16,8 +16,9 @@ class GerarPedidoHandler
     public function execute(GerarPedido $gerarPedido)
     {
         $orcamento = new Orcamento();
-        $orcamento->qtdItens = $gerarPedido->getNumeroItens();
-        $orcamento->valor = $gerarPedido->getValorOrcamento();
+        //concertar orcamento->qtdItens e orcamento->valor
+        //$orcamento->qtdItens = $gerarPedido->getNumeroItens();
+        //$orcamento->valor = $gerarPedido->getValorOrcamento();
 
         $pedido = new Pedido;
         $pedido->dataFim = new \DateTimeImmutable;
