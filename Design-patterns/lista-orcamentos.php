@@ -4,7 +4,7 @@ use Alura\DesignPattern\Orcamento;
 
 require_once 'vendor/autoload.php';
 
-$orcamento1 = new Orcamento();
+/* $orcamento1 = new Orcamento();
 $orcamento1->qtdItens = 7;
 $orcamento1->aprovar();
 $orcamento1->valor = 500;
@@ -18,7 +18,7 @@ $orcamento2->valor = 200;
 $orcamento3 = new Orcamento();
 $orcamento3->qtdItens = 12;
 $orcamento3->reprovar();
-$orcamento3->valor = 1500;
+$orcamento3->valor = 1500; */
 
 $listaOrcamentos = new ListaDeOrcamento();
 $listaOrcamentos->adicionaOrcamento($orcamento1);
