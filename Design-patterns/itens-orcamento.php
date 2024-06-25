@@ -1,6 +1,6 @@
 <?php
 
-use Alura\DesignPattern\{Orcamento, ItensOrcamento};
+use Alura\DesignPattern\{Orcamento, ItensOrcamento, CacheOrcamentoProxy};
 
 require 'vendor/autoload.php';
 
@@ -30,4 +30,9 @@ $orcamentoAntigo->addItens($orcamentoMaisAntigoAinda);
 
 $orcamento->addItens($orcamentoAntigo);
 
-echo $orcamento->valor() . PHP_EOL;
+$proxy = new CacheOrcamentoProxy($orcamento);
+
+//$proxy->addItem($item1); throw new exception
+
+echo $proxy->valor() . PHP_EOL;
+echo $proxy->valor() . PHP_EOL;
