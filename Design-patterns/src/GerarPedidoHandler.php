@@ -2,6 +2,7 @@
 
 namespace Alura\DesignPattern;
 use Alura\DesignPattern\AcoesGerarPedido\{AcaoPosPedido, CriarPedidoNoBanco, EnviarPedidoPorEmail, GerarLogPedido};
+use Alura\DesignPattern\Pedido\{Pedido, TemplatePedido};
 
 class GerarPedidoHandler
 {
@@ -21,9 +22,9 @@ class GerarPedidoHandler
         //$orcamento->valor = $gerarPedido->getValorOrcamento();
 
         $pedido = new Pedido;
-        $pedido->dataFim = new \DateTimeImmutable;
-        $pedido->nomeCliente = $gerarPedido->getNomeCliente();
+        $template = new TemplatePedido($gerarPedido->getNomeCliente(), new \DateTimeImmutable);
         $pedido->orcamento = $orcamento;
+        $pedido->template = $template;
 
         foreach($this->acoesPosPedido as $acao){
             $acao->executarAcao($pedido);

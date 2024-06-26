@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\DesignPattern\Pedido;
+namespace Alura\DesignPattern;
 
 class GerarPedido
 {
