@@ -1,17 +1,18 @@
 <?php
 
 use Alura\DesignPattern\{ Orcamento };
-use Alura\DesignPattern\Pedido\{ Pedido, TemplatePedido };
+use Alura\DesignPattern\Pedido\{ CriaPedido };
 
 require_once 'vendor/autoload.php';
 
 $pedidos = [];
-$dado = new TemplatePedido(md5('a'), new DateTimeImmutable());
+$criarPedido = new CriaPedido();
+
+$dataHoje = new \DateTimeImmutable();
 
 for($i = 0; $i < 10000; $i++){
-    $pedido = new Pedido();
-    $pedido->template = $dado;
-    $pedido->orcamento = new Orcamento();
+    $orcamento = new Orcamento();
+    $pedido = $criarPedido->criarPedido('Alan Turing', date('Y-m-d'), $orcamento);
 
     $pedidos[] = $pedido;
 }
