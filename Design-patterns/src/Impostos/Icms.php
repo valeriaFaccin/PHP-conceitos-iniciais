@@ -3,7 +3,7 @@
 namespace Alura\DesignPattern\Impostos;
 use Alura\DesignPattern\Orcamento;
 
-class Icms /* extends Imposto */ 
+class Icms  extends Imposto 
 {
     public function realizaCalculo(Orcamento $orcamento): float
     {
