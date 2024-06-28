@@ -9,10 +9,14 @@ $builder = new ConstructNotaFiscalServico();
 $item = new ItensOrcamento();
 $item->valor = 500;
 
-$builder->paraEmpresa('123123123', 'Nome da Empresa')
+$notaFiscal = $builder->paraEmpresa('123123123', 'Nome da Empresa')
         ->comOBS('Uma observação')
-        ->item($item);
-
-$notaFiscal = $builder->getNotaFiscal();
+        ->item($item)
+        ->getNotaFiscal();
 
 echo $notaFiscal->valor() . PHP_EOL;
+
+$notaFiscal2 = $notaFiscal->clonar();
+$notaFiscal2->itens[] = new ItensOrcamento();
+
+var_dump($notaFiscal, $notaFiscal2);

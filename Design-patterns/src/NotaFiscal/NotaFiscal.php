@@ -24,4 +24,17 @@ class NotaFiscal
         );
         
     }
+
+    public function clonar() : NotaFiscal
+    {
+        $clone = new NotaFiscal();
+        $clone->cnpj = $this->cnpj;
+        $clone->razaoSocial = $this->razaoSocial;
+        $clone->obs = $this->obs;
+        $clone->valorImpostos = $this->valorImpostos;
+        $clone->itens = $this->itens;
+        $clone->data = $this->data;
+
+        return $clone;
+    }
 }
