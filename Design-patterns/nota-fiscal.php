@@ -16,7 +16,7 @@ $notaFiscal = $builder->paraEmpresa('123123123', 'Nome da Empresa')
 
 echo $notaFiscal->valor() . PHP_EOL;
 
-$notaFiscal2 = $notaFiscal->clonar();
+$notaFiscal2 = clone $notaFiscal;
 $notaFiscal2->itens[] = new ItensOrcamento();
 
 var_dump($notaFiscal, $notaFiscal2);

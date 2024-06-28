@@ -37,4 +37,9 @@ class NotaFiscal
 
         return $clone;
     }
+
+    public function __clone()
+    {
+        $this->obs = 'Nova observação';
+    }
 }
