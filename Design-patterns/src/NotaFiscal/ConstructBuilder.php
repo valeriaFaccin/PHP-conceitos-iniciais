@@ -4,9 +4,9 @@ namespace Alura\DesignPattern\NotaFiscal;
 
 use Alura\DesignPattern\ItensOrcamento;
 
-class ConstructBuilder
+abstract class ConstructBuilder
 {
-    private NotaFiscal $notaFiscal;
+    protected NotaFiscal $notaFiscal;
 
     public function __construct()
     {
@@ -18,20 +18,30 @@ class ConstructBuilder
     {
         $this->notaFiscal->cnpj = $cnpj;
         $this->notaFiscal->razaoSocial = $razaoSocial;
+
+        return $this;
     }
 
     public function item(ItensOrcamento $itens)
     {
         $this->notaFiscal->itens[] = $itens;
+
+        return $this;
     }
 
     public function comOBS(string $obs)
     {
         $this->notaFiscal->obs = $obs;
+
+        return $this;
     }
 
     public function dataEmissao(\DateTimeInterface $dataEmissao)
     {
         $this->notaFiscal->data = $dataEmissao;
+
+        return $this;
     }
+
+    abstract public function getNotaFiscal() : NotaFiscal;
 }
