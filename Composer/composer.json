@@ -4,7 +4,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Valeriafaccin\\BuscadorCursos\\": "src/"
+            "Alura\\BuscadorDeCursos\\": "src/"
         }
     },
     "authors": [
@@ -17,5 +17,10 @@
         "guzzlehttp/guzzle": "^7.8",
         "symfony/dom-crawler": "^7.1",
         "symfony/css-selector": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11",
+        "squizlabs/php_codesniffer": "*",
+        "phan/phan": "^5.4"
     }
 }
