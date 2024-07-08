@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '676675b5de8425f44ecef79cf5101826156611fb',
+        'reference' => '7354d895387ed2e25994dfbddc9d05cf2763b6f2',
         'name' => 'valeriafaccin/buscador-cursos',
         'dev' => true,
     ),
@@ -598,7 +598,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '676675b5de8425f44ecef79cf5101826156611fb',
+            'reference' => '7354d895387ed2e25994dfbddc9d05cf2763b6f2',
             'dev_requirement' => false,
         ),
         'webmozart/assert' => array(
