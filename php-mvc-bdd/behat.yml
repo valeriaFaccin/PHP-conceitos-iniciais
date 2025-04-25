@@ -1,0 +1,29 @@
+# do comments work here as well as it does in other places?
+# // this means no
+default:
+  suites:
+    default:
+      contexts:
+        - FormacaoEmMemoria
+        - FormacaoNoBancoDeDados
+    unidade:
+      contexts:
+        - FormacaoEmMemoria
+      filters:
+        tags: unidade
+    integracao:
+      contexts:
+        - FormacaoNoBancoDeDados
+      filters:
+        tags: integracao
+    e2e:
+      contexts:
+        - Behat\MinkExtension\Context\MinkContext
+      filters:
+        tags: e2e
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://0.0.0.0:8080'
+      sessions:
+        default:
+          goutte: ~

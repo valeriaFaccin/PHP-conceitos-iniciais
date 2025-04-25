@@ -1,0 +1,20 @@
+Avaliador (Alura\Leilao\Test\Service\Avaliador)
+ [x] Avaliador encontra maior valor with data set "ordem-aleatoria"
+ [x] Avaliador encontra maior valor with data set "ordem-crescente"
+ [x] Avaliador encontra maior valor with data set "ordem-decrescente"
+ [x] Avaliador encontra menor valor with data set "ordem-aleatoria"
+ [x] Avaliador encontra menor valor with data set "ordem-crescente"
+ [x] Avaliador encontra menor valor with data set "ordem-decrescente"
+ [x] Avaliador retorna maiores lances with data set "ordem-aleatoria"
+ [x] Avaliador retorna maiores lances with data set "ordem-crescente"
+ [x] Avaliador retorna maiores lances with data set "ordem-decrescente"
+ [x] Leilao vazio
+ [x] Leilao finalizado nao pode ser avaliado
+
+Leilao (Alura\Leilao\Test\Model\Leilao)
+ [x] Apenas um lance por vez
+ [x] Ate 5 lances por usuario
+ [x] Leilao recebe lances with data set "2-lances"
+ [x] Leilao recebe lances with data set "1-lance"
+ [x] Leilao finalizado nao recebe novos lances
+

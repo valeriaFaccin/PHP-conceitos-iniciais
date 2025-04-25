@@ -1,0 +1,3 @@
+Leilao Dao (Alura\Leilao\Tests\Integration\Dao\LeilaoDao)
+ [x] Ao atualizar leilao status deve ser alterado
+
