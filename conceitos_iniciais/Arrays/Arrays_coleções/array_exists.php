@@ -19,14 +19,14 @@ var_dump(in_array("10", $notas, true)); //verifica se o valor passado no parâme
 //true pertence ao terceiro parâmetro de in_array (strict), compara o tipo do parâmetro com o do valor, evitando a conversão de srt para int e retorna false
 
 echo "Quem tirou 10?"  . PHP_EOL;
-echo array_search(10, $notas) . PHP_EOL;//busca a chave do valor informado
+echo array_exists . phparray_search(10, $notas) . PHP_EOL;//busca a chave do valor informado
 
 echo "" . PHP_EOL;
 
 echo "Alguèm tirou 10?"  . PHP_EOL;
 if(in_array(10, $notas)){
     echo "Aluno que tirou 10:"  . PHP_EOL;
-    echo array_search(10, $notas) . PHP_EOL;
+    echo array_exists . phparray_search(10, $notas) . PHP_EOL;
 } else {
     echo "A nota 10 não foi alcançada por ninguém" . PHP_EOL;
 }

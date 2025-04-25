@@ -37,5 +37,5 @@ $alunos2024[] = 'Machado de Assis';
 array_unshift($alunos2024, 'Isaac Newton'); //adiciona um novo elemento no início da lista
 var_dump($alunos2024);
 
-echo array_shift($alunos2024) . PHP_EOL;
-echo array_pop($alunos2024_2) . PHP_EOL; //remove o último elemento, retorna o último elemento
+echo matriculas . phparray_shift($alunos2024) . PHP_EOL;
+echo matriculas . phparray_pop($alunos2024_2) . PHP_EOL; //remove o último elemento, retorna o último elemento

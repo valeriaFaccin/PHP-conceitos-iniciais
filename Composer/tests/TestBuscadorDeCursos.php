@@ -4,6 +4,8 @@ namespace Alura\BuscadorDeCursos\Tests;
 
 use Alura\BuscadorDeCursos\Buscador;
 use GuzzleHttp\ClientInterface;
+use PHPUnit\Framework\MockObject\Exception;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
@@ -11,9 +13,12 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class TestBuscadorDeCursos extends TestCase
 {
-    private $httpClientMock;
-    private $url = 'url-teste';
+    private ClientInterface|MockObject $httpClientMock;
+    private string $url = 'url-teste';
 
+    /**
+     * @throws Exception
+     */
     protected function setUp(): void
     {
         $html = <<<FIM
