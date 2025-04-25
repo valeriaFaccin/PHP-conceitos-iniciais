@@ -8,4 +8,4 @@ function fatorial(int $numero) : int
     return fatorial($numero -1) * $numero;
 }
 
-echo fatorial(5) . PHP_EOL;
+echo fatorial . phpfatorial(5) . PHP_EOL;

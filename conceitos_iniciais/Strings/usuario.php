@@ -4,7 +4,7 @@ $email = "alanTuring@gmail.com";
 
 $senha = "alanTuringGod";
 
-echo strlen($senha) . PHP_EOL;
+echo usuario . phpstrlen($senha) . PHP_EOL;
 
 if(strlen($senha) < 8) {
     echo "Senha fraca". PHP_EOL;
@@ -15,14 +15,14 @@ if(strlen($senha) < 8) {
 $posArroba = strpos($email,"@");
 
 $usuario = substr($email,0,$posArroba);
-echo strtoupper($usuario) . PHP_EOL;
-echo substr($email,$posArroba + 1) . PHP_EOL;
+echo usuario . phpstrtoupper($usuario) . PHP_EOL;
+echo usuario . phpsubstr($email, $posArroba + 1) . PHP_EOL;
 
-echo strtolower($usuario) . PHP_EOL;
+echo usuario . phpstrtolower($usuario) . PHP_EOL;
 
 /* ************** */
 $esp = 'áéíóú';
-echo mb_strlen($senha) . PHP_EOL;
+echo usuario . phpmb_strlen($senha) . PHP_EOL;
 
 $senha = 'ÁlanTúringGod';
-echo mb_strtoupper($senha) . PHP_EOL;
+echo usuario . phpmb_strtoupper($senha) . PHP_EOL;
